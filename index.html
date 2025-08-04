@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calorie Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="top-header">Nutrition Dashboard</div>
+  <main>
+    <section class="card">
+      <h2>Calories Summary</h2>
+      <canvas id="calorieChart" width="200" height="200"></canvas>
+      <div class="summary-text">
+        <p><strong>Remaining</strong>: <span id="remainingCalories">0</span></p>
+        <p><strong>Burned</strong>: <span id="burnedCalories">0</span></p>
+        <p><strong>Calories</strong>: <span id="consumedCalories">0</span> / <span id="maintenanceCalories">2000</span> kcal</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Macros</h2>
+      <div class="macro">
+        <strong>Carbs</strong>
+        <div class="progress-bar"><div id="carbsBar"></div></div>
+        <span id="carbsText">0 / 200g</span>
+      </div>
+      <div class="macro">
+        <strong>Protein</strong>
+        <div class="progress-bar"><div id="proteinBar"></div></div>
+        <span id="proteinText">0 / 100g</span>
+      </div>
+      <div class="macro">
+        <strong>Fat</strong>
+        <div class="progress-bar"><div id="fatBar"></div></div>
+        <span id="fatText">0 / 100g</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Log Food</h2>
+      <input type="text" id="foodInput" placeholder="e.g. Banana">
+      <button onclick="logFood()">Add Food</button>
+      <div id="foodLog"></div>
+    </section>
+
+    <section class="card">
+      <h2>Log Exercise</h2>
+      <input type="text" id="exerciseInput" placeholder="e.g. Running">
+      <input type="number" id="exerciseMinutes" placeholder="Minutes">
+      <button onclick="logExercise()">Add Exercise</button>
+      <div id="exerciseLog"></div>
+    </section>
+
+    <section class="card">
+      <h2>Set Your Calorie Maintenance</h2>
+      <input type="number" id="maintenanceInput" placeholder="e.g. 2200">
+      <button onclick="setMaintenanceCalories()">Set Maintenance</button>
+    </section>
+
+    <section class="card">
+      <h2>Personal Reflection</h2>
+      <textarea id="reflectionInput" rows="4" placeholder="Write something about your day..."></textarea>
+      <button onclick="logReflection()">Save Reflection</button>
+      <div id="reflectionLog"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
